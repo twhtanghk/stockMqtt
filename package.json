@@ -19,7 +19,8 @@
   "dependencies": {
     "browserguid": "https://github.com/twhtanghk/browserGuid",
     "coffeescript": "^2.3.2",
-    "mqtt": "^2.18.8",
+    "lodash": "^4.17.11",
+    "mqtt": "https://github.com/twhtanghk/MQTT.js",
     "mqtt-level-store": "^2.2.0"
   }
 }
