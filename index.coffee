@@ -13,7 +13,7 @@ module.exports = ->
       outgoingStore: outgoing
       clean: false
     .on 'connect', =>
-      client.subscribe "#{@topic}/#", qos: 2
+      client.subscribe "#{client.topic}/#", qos: 2
       console.debug 'mqtt connected'
     .on 'message', (topic, msg) =>
       if topic == client.topic
