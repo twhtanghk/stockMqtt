@@ -1,14 +1,14 @@
 _ = require 'lodash'
 
-module.exports = ->
+module.exports = ({url, client, user, topic} = {}) ->
   guid = require 'browserguid'
 
   {incoming, outgoing} = require('mqtt-level-store') './data'
 
   client = require 'mqtt'
-    .connect process.env.MQTTURL,
-      username: process.env.MQTTUSER
-      clientId: process.env.MQTTCLIENT || guid()
+    .connect url || process.env.MQTTURL,
+      username: user || process.env.MQTTUSER
+      clientId: client || process.env.MQTTCLIENT || guid()
       incomingStore: incoming
       outgoingStore: outgoing
       clean: false
@@ -28,7 +28,7 @@ module.exports = ->
         catch err
           console.error err
 
-  client.topic = process.env.MQTTTOPIC.split('/')[0]
+  client.topic = (topic || process.env.MQTTTOPIC).split('/')[0]
 
   client.symbols = []
 
