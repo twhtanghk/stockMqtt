@@ -3,14 +3,10 @@ _ = require 'lodash'
 module.exports = ({url, client, user, topic} = {}) ->
   guid = require 'browserguid'
 
-  {incoming, outgoing} = require('mqtt-level-store') './data'
-
   client = require 'mqtt'
     .connect url || process.env.MQTTURL,
       username: user || process.env.MQTTUSER
       clientId: client || process.env.MQTTCLIENT || guid()
-      incomingStore: incoming
-      outgoingStore: outgoing
       clean: false
     .on 'connect', =>
       client.subscribe "#{client.topic}/#", qos: 2

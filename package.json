@@ -18,9 +18,8 @@
   "homepage": "https://github.com/twhtanghk/stockMqtt#readme",
   "dependencies": {
     "browserguid": "https://github.com/twhtanghk/browserGuid",
-    "coffeescript": "^2.3.2",
-    "lodash": "^4.17.11",
-    "mqtt": "https://github.com/twhtanghk/MQTT.js",
-    "mqtt-level-store": "^2.2.0"
+    "coffeescript": "^2.4.1",
+    "lodash": "^4.17.15",
+    "mqtt": "https://github.com/twhtanghk/MQTT.js"
   }
 }
